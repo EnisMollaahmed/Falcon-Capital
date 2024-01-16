@@ -1,0 +1,111 @@
+:root{
+    --nice-green:rgba(243, 250, 242, 0.992);
+    --log-in-container-green:rgba(154, 163, 108, 0.934);
+    --sign-white:rgb(249, 255, 243);
+}
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.sign-in-interface{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background-color:rgb(255, 240, 216);
+}
+
+.central-sign-in{
+    height:40%;
+    width:60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.form-container{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    background-color: var(--log-in-container-green);
+    border:none;
+    border-radius:1rem;
+    width:40vw;
+    justify-content: space-evenly;
+    height: 55vh;
+}
+
+.sign-to-acc{
+    margin-bottom:0;
+    color:var(--sign-white);
+    font-size: 1.8rem;
+}
+
+.form-item{
+    display:block;
+    margin:1rem;
+    border:hidden;
+    border-radius: 1rem;
+}
+
+.send-sign-in-info{
+    margin:1rem auto;
+    width:90%;
+    background-color: antiquewhite;
+    height: 5vh;
+    color:rgb(140, 150, 129);
+    font-size:large;
+    letter-spacing:0.1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    position:relative;
+}
+
+.send-sign-in-info:hover{
+    box-shadow: 10px 10px 0px rgba(224, 241, 207, 0.729);
+    top: -5px;
+    left: -5px;
+    transition: .2s ease-in;
+    z-index:1;
+    background-color: rgb(100, 219, 87);
+    color:white;
+}
+
+.send-sign-in-info::after,.send-sign-in-info::before{
+    position:absolute;
+    z-index:-1;
+} 
+
+.text-inp{
+    width:30vw;
+    margin:2rem auto;
+    height:5vh;
+}
+
+.falcon{
+    font-size: 4rem;
+    letter-spacing: 0.3rem;
+    color:rgba(61, 103, 61, 0.729);
+}
+
+.or-container{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.or{
+    margin:0 auto;
+    color:var(--sign-white);
+}
+
+.error-occurs{
+    border-bottom:2px solid rgb(255, 52, 52);
+}
+
+.text-inp::placeholder{
+    text-align: center;
+}
