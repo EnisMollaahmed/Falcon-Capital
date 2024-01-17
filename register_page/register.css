@@ -20,7 +20,7 @@ body{
     margin: auto;
     align-items: center;
     border-radius: 1.5rem;
-    height: 60%;
+    height: 65%;
     width:auto;
 }
 
@@ -97,5 +97,9 @@ body{
 }
 
 .error-occurs{
-    border-bottom:2px solid rgb(255, 52, 52);
+    border-bottom:.2rem solid rgb(255, 52, 52);
+}
+
+.is-correct{
+    border-bottom:.2rem solid rgb(0, 251, 0);
 }
