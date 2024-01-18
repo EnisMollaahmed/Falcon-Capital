@@ -4,6 +4,7 @@ const mailField = document.querySelector(".reg-email");
 const usernameField = document.querySelector(".reg-user-name");
 const passwField = document.querySelector('[name="password"]');
 const repPasswField = document.querySelector('[name="rep-password"]');
+const regButton = document.querySelector("#regButton");
 
 function redirTo(event){
     window.location = "http://127.0.0.1:5500/sign_in_page/sign_in.html";
@@ -131,8 +132,35 @@ const validateRepPassword = () => {
     }
 };
 
+function userExists(userObj){
+    const strUser = JSON.stringify(userObj);
+    let keys = Object.keys(localStorage);
+    for(let key in keys) {
+        if(localStorage.getItem(key) === strUser){
+            return true;
+        }
+    }
+    return false;
+}
+
+const registerUser = (event) => {
+    if(mailField.classList.contains("is-correct") && usernameField.classList.contains("is-correct") && passwField.classList.contains("is-correct") && repPasswField.classList.contains("is-correct")){
+        const userObj = {
+            email: mailField.value,
+            usname: usernameField.value,
+            password: passwField.value
+        };
+        if(!userExists(userObj)){
+            localStorage(usernameField.value, JSON.stringify(userObj));
+            //TODO set here window.location to the main site
+        }
+    }
+    event.preventDefault();
+};
+
 signInButton.addEventListener("click", redirTo);
 mailField.addEventListener("change", addErrorToMail);
 usernameField.addEventListener("change", checkUserName);
 passwField.addEventListener("change", validatePassword);
 repPasswField.addEventListener("change", validateRepPassword);
+regButton.addEventListener("click", registerUser);
