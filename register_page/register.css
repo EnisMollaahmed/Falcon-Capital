@@ -103,3 +103,8 @@ body{
 .is-correct{
     border-bottom:.2rem solid rgb(0, 251, 0);
 }
+
+.error-text{
+    color:rgb(255, 67, 67);
+    font-weight: bold;
+}
