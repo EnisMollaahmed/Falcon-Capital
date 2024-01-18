@@ -10,20 +10,23 @@ function redirTo(event){
     event.preventDefault();
 }
 
+const addErrMessage = ()=>{
+    const errParagraph = document.createElement("p");
+    formContainer.appendChild(errParagraph);
+    errParagraph.id="mailErr";
+    errParagraph.classList.add("error-text");
+    errParagraph.textContent = "Invalid e-mail address!";
+}
+
 function addErrorToMail(){
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let errParagraph;
     if(emailRegex.test(mailField.value) && mailField.value === ""){
         if(mailField.classList.contains("is-correct")){
             mailField.classList.remove("is-correct");
         }
         else{
             mailField.classList.add("error-occurs");
-            errParagraph = document.createElement("p");
-            formContainer.appendChild(errParagraph);
-            errParagraph.id="mailErr";
-            errParagraph.classList.add("error-text");
-            errParagraph.textContent = "Invalid e-mail address!";
+            addErrMessage();
         }
     }
     else if(emailRegex.test(mailField.value)){
@@ -37,14 +40,18 @@ function addErrorToMail(){
     else{
         if(mailField.classList.contains("is-correct")){
             mailField.classList.remove("is-correct");
-            errParagraph = document.createElement("p");
-            formContainer.appendChild(errParagraph);
-            errParagraph.id="mailErr";
-            errParagraph.classList.add("error-text");
-            errParagraph.textContent = "Invalid e-mail address!";
+            addErrMessage()
         }
         mailField.classList.add("error-occurs");
     }
+}
+
+const userNameErrorMsg = () => {
+    const errParagraph = document.createElement("p");
+    formContainer.appendChild(errParagraph);
+    errParagraph.id="usrNameErr";
+    errParagraph.classList.add("error-text");
+    errParagraph.textContent = "Invalid username!";
 }
 
 const checkUserName = () => {
@@ -55,11 +62,14 @@ const checkUserName = () => {
         }
         else{
             usernameField.classList.add("error-occurs");
+            userNameErrorMsg();
         }
     }
     else if(usernameRegex.test(usernameField.value)){
         if(usernameField.classList.contains("error-occurs")){
             usernameField.classList.remove("error-occurs");
+            const errToRemove = document.querySelector("#usrNameErr");
+            formContainer.removeChild(errToRemove);
         }
         usernameField.classList.add("is-correct");
     }
@@ -68,6 +78,7 @@ const checkUserName = () => {
             usernameField.classList.remove("is-correct");
         }
         usernameField.classList.add("error-occurs");
+        userNameErrorMsg();
     }
 };
 
@@ -77,27 +88,44 @@ const validatePassword = () => {
         if(passwField.classList.contains("is-correct")){
             passwField.classList.remove("is-correct");
         }
-        passwField.classList.add("error-occurs");
+        if(!passwField.classList.contains("error-occurs")){
+            passwField.classList.add("error-occurs");
+            const errP = document.createElement("p");
+            formContainer.appendChild(errP);
+            errP.id = "invPassw";
+            errP.classList.add("error-text");
+            errP.textContent = "Invalid password!";
+        }
     }
     else{
         if(passwField.classList.contains("error-occurs")){
             passwField.classList.remove("error-occurs");
+            const elemToRemove = document.querySelector("#invPassw");
+            formContainer.removeChild(elemToRemove);
         }
         passwField.classList.add("is-correct")
     }
 };
 
 const validateRepPassword = () => {
-    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-    if(!passwordRegex.test(repPasswField.value) || repPasswField.value === "" || repPasswField.value !== passwField.value){
+    if(repPasswField.value !== passwField.value){
         if(repPasswField.classList.contains("is-correct")){
             repPasswField.classList.remove("is-correct");
         }
-        repPasswField.classList.add("error-occurs");
+        if(!repPasswField.classList.contains("error-occurs")){
+            const errP=document.createElement("p");
+            formContainer.appendChild(errP);
+            repPasswField.classList.add("error-occurs");
+            errP.id = "repErr";
+            errP.classList.add("error-text");
+            errP.textContent = "Password does not match!";
+        }
     }
     else{
         if(repPasswField.classList.contains("error-occurs")){
             repPasswField.classList.remove("error-occurs");
+            const eToRemove = document.querySelector("#repErr");
+            formContainer.removeChild(eToRemove);
         }
         repPasswField.classList.add("is-correct");
     }

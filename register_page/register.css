@@ -1,6 +1,6 @@
 :root{
     --nice-green:rgba(243, 250, 242, 0.992);
-    --container-green:rgba(190, 207, 106, 0.803)
+    --container-green:rgba(190, 207, 106, 0.803);
 }
 
 body{
@@ -60,10 +60,10 @@ body{
     margin: 0.5rem auto;
     width:90%;
     height:2rem;
-    background-color: var(--nice-green);
+    background-color: rgb(231, 255, 218);
     border:hidden;
     border-radius:1rem;
-    color:rgb(106, 173, 96);
+    color:rgb(73, 73, 73);
     font-size:medium;
     letter-spacing: 0.1rem;
     position:relative;
@@ -107,4 +107,5 @@ body{
 .error-text{
     color:rgb(255, 67, 67);
     font-weight: bold;
+    margin:0;
 }
