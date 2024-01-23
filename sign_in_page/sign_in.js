@@ -21,6 +21,7 @@ const profileExist = (mail, pass) =>{
 const accessToApp = (event)=>{
     if(profileExist(mailField.value, passwordField.value)){
         //TODO: send user to app
+        sessionStorage
     }
     else{//TODO: output error message
         

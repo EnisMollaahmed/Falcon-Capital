@@ -152,7 +152,8 @@ const registerUser = (event) => {
         };
         if(!userExists(userObj)){
             localStorage(usernameField.value, JSON.stringify(userObj));
-            //TODO set here window.location to the main site
+            sessionStorage("actual-user", JSON.stringify(userObj));
+            window.location="http://127.0.0.1:5500/main_page/main_page.html";
         }
     }
     event.preventDefault();
