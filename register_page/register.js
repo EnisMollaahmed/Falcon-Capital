@@ -145,13 +145,14 @@ function userExists(userObj){
 
 const registerUser = (event) => {
     if(mailField.classList.contains("is-correct") && usernameField.classList.contains("is-correct") && passwField.classList.contains("is-correct") && repPasswField.classList.contains("is-correct")){
-        const userObj = {
+        let userObj = {
             email: mailField.value,
             usname: usernameField.value,
             password: passwField.value
         };
         if(!userExists(userObj)){
-            localStorage(usernameField.value, JSON.stringify(userObj));
+            userObj.balance = 0;
+            localStorage(mailField.value, JSON.stringify(userObj));
             sessionStorage("actual-user", JSON.stringify(userObj));
             window.location="http://127.0.0.1:5500/main_page/main_page.html";
         }

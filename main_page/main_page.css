@@ -1,5 +1,6 @@
 body{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: whitesmoke;
 }
 
 .h_and_nav{
@@ -98,4 +99,10 @@ body{
     color:rgb(65, 65, 65);
     font-weight: bold;
     font-size:1.1rem;
+}
+
+.balance-num{
+    color:rgb(23, 23, 23);
+    font-size:large;
+    font-weight:bold;
 }

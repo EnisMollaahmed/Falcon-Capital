@@ -109,3 +109,8 @@ body{
 .text-inp::placeholder{
     text-align: center;
 }
+
+.error-message{
+    color:rgb(207, 0, 0);
+    font-weight:bold;
+}
