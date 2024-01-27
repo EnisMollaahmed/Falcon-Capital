@@ -148,7 +148,12 @@ const registerUser = (event) => {
         let userObj = {
             email: mailField.value,
             usname: usernameField.value,
-            password: passwField.value
+            password: passwField.value,
+            balance:0,
+            currency:"X",
+            debt:0,
+            debtCount:0,
+            transactions:[]
         };
         if(!userExists(userObj)){
             userObj.balance = 0;

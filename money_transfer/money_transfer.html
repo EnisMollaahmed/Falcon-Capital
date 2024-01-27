@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Money Transfer</title>
+        <link rel="stylesheet" href="money_transfer.css">
+        <script srd="money_transfer.js" defer></script>
+    </head> 
+    <body>
+        <header class="h_and_nav">
+            <h1 class="falcon_capital">Falcon Capital</h1>
+            <nav class="nav_container">
+                <a href="#" class="direct">Dashboard</a>
+                <a href="#" class="direct">Create a Bank Account</a>
+                <a href="#" class="direct">View Transactions</a>
+                <a href="#" class="direct">Money Transfer</a>
+                <a href="#" class="direct">Taking a Loan</a>
+                <a href="#" class="direct">Balance and Statistics</a>
+            </nav>
+        </header>
+        <main class="money-transfer">
+            <section class="send-money">
+                <p class="send-money-capt">Send Money</p>
+                <form class="transfer-to">
+                    <label for="sendTo" class="label-text">Transfer Money To</label>
+                    <input type="text" class="send-to send-input" id="sendTo" placeholder="Username">
+                    <label for="sendAmount" class="label-text">Amount to Transfer</label>
+                    <input type="number" id="sendAmount" class="send-amount send-input" placeholder="Amount" min="20" max="1500">
+                    <button class="transfer-button">Transfer</button>
+                </form>
+            </section>
+            <section class="show-balance">
+                <p class="your-balance">Your balance is</p>
+                <section class="balance-circle">
+                    <p class="balnce-curr"><span class="balance">0000</span> <span class="currency">BGN</span></p>
+                </section>
+            </section>
+        </main>
+    </body>
+</html>

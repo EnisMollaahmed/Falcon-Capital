@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" conten="width=device-width, initial-scale=1.0">
+        <title>Take a loan</title>
+        <link rel="stylesheet" href="take_loan.css">
+        <script type="text/javascript" src="take_loan.js" defer></script>
+    </head>
+    <body>
+        <header class="h_and_nav">
+            <h1 class="falcon_capital">Falcon Capital</h1>
+            <nav class="nav_container">
+                <a href="#" class="direct">Dashboard</a>
+                <a href="#" class="direct">Create a Bank Accoun</a>
+                <a href="#" class="direct">View Transactions</a>
+                <a href="#" class="direct">Money Transfer</a>
+                <a href="#" class="direct">Taking a Loan</a>
+                <a href="#" class="direct">Balance and Statistics</a>
+            </nav>
+        </header>
+        <main class="loan">
+            <section class="request-loan-container">
+                <p class="take-loan">Take a Loan</p>
+                <form class="request-loan">
+                    <label class="request-label req" for="request">Enter Needed Amount</label>
+                    <input id="request" class="req-input req-item req" type="number" max="5000" min="1000" placeholder="Amount">
+                    <label class="request-label req" for="period">Return period</label>
+                    <input id="period" type="number" class="ret-period req-item req" max="12" min="2" placeholder="Enter Months">
+                    <button class="loan-button req">Get Loan</button>
+                </form>
+            </section>
+            <section class="total-debt-container">
+                <p class="total-debt take-loan">Total debt</p>
+                <section class="circle">
+                    <p class="amount-curr"><span class="amount">0000</span> <span class="currency">BGN</span></p>
+                </section>
+                <p class="debt-count">Count of loans: <span class="count">0</span></p>
+            </section>
+        </main> 
+
+    </body>
+</html>

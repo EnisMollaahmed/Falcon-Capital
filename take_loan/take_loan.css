@@ -1,0 +1,152 @@
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: whitesmoke;
+}
+
+.h_and_nav{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    background: linear-gradient(90deg, rgb(176, 132, 0),rgb(253, 239, 175));
+    border:none;
+}
+
+.falcon_capital{
+    color:rgb(238, 238, 238);
+    font-size:2.3rem;
+    margin-left:10%;
+}
+
+.nav_container{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    background: rgb(176, 132, 0);
+}
+
+.direct{
+    color:white;
+    text-decoration:none;
+    margin: 0;
+    font-size:1.2rem;
+    border:none;
+    padding:0.8rem;
+}
+
+.direct:hover{
+    background-color: rgb(227, 196, 59);
+    color:rgb(73, 73, 73);
+    height: fit-content;
+}
+
+.loan{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    align-items:center;
+    justify-content: space-around;
+    height: 100vh;
+    background: url("https://th.bing.com/th/id/OIG3.mIAgo3jPwV_6Bl25EdKs?w=1024&h=1024&rs=1&pid=ImgDetMain");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.request-loan-container{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    width:30%;
+    height: 60vh;
+    background-color: blanchedalmond;
+    border:none;
+    border-radius: 2rem;
+    box-shadow:0 0 0.3rem 0.1rem rgba(255, 179, 56, 0.807);
+}
+
+.req-item{
+    display: flex;
+    flex-direction:column;
+    width:100%;
+    height:2.2rem;
+    border:none;
+    border-radius:1rem
+}
+
+.req{
+    margin:0.5rem auto;
+}
+
+.request-loan{
+    width:90%;
+    display:flex;
+    flex-direction:column;
+}
+
+.take-loan{
+    font-size:1.5rem;
+    margin-top:0;
+    letter-spacing: 0.2rem;
+    color:rgb(173, 110, 0);
+    font-weight: bolder;
+}
+
+.loan-button{
+    width:100%;
+    height: 2rem;
+    border:none;
+    background-color: rgb(255, 198, 123);
+    border-radius:1rem;
+    font-size: 0.9rem;
+    color:rgb(255, 251, 244);
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+    position:relative;
+}
+
+.loan-button:hover{
+    background-color: rgb(255, 202, 43);
+    color:rgb(75, 75, 75);
+    font-weight: normal;
+    top: -5px;
+    left: -5px;
+    transition: .2s ease-in;
+    z-index:1;
+    box-shadow: 10px 10px 0px rgba(189, 142, 1, 0.729);
+}
+.total-debt-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-left:1rem;
+    width:40%;
+    height:60vh;
+    justify-content:space-around;
+    background-color: rgba(255, 234, 209, 0.89);
+    border-radius:2rem;
+    border:none;
+    box-shadow: 0 0 0.3rem 0.1rem rgba(255, 179, 56, 0.881);
+}
+
+.circle{
+    width:14rem;
+    height: 14rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:1.2rem solid;
+    border-radius:50%;
+    border-color:rgb(243, 166, 52);
+}
+
+.amount-curr{
+    font-size:2.2rem;
+    font-weight: bold;
+    color:rgb(83, 83, 83)
+}
+
+.debt-count{
+    font-size:1.1rem;
+    color: rgb(83, 83, 83);
+}
