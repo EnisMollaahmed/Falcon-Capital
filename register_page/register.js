@@ -153,7 +153,8 @@ const registerUser = (event) => {
             currency:"X",
             debt:0,
             debtCount:0,
-            transactions:[]
+            "outcome-transactions":[],
+            "income-transactions":[]
         };
         if(!userExists(userObj)){
             userObj.balance = 0;

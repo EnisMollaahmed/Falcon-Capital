@@ -7,7 +7,8 @@
         "currency":"USD",
         "debt":2250,
         "debtCount":1,
-        "transactions":[]
+        "outcome-transactions":[],
+        "income-transactions":[]
     },
     {
         "email":"ullman@yahoo.com",
@@ -17,8 +18,8 @@
         "currency":"EUR",
         "debt":0,
         "debtCount":0,
-        "transactions":[]
-
+        "outcome-transactions":[],
+        "income-transactions":[]
     },
     {
         "email":"roamer@aol.com",
@@ -28,6 +29,7 @@
         "currency":"BGN",
         "debt":3000,
         "debtCount":2,
-        "transactions":[]
+        "outcome-transactions":[],
+        "income-transactions":[]
     }
 ]
