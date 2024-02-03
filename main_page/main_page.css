@@ -44,8 +44,8 @@ body{
     flex-direction:row;
     background: url("https://th.bing.com/th/id/OIG.L8D5rlCC7BV_gLNlrgN1?w=1024&h=1024&rs=1&pid=ImgDetMain");
     background-repeat: no-repeat;
-    background-size: auto auto;
-    background-position: 90% 10%;
+    background-size: 100% 100%;
+    justify-content:space-between;
 }
 
 .flag{
@@ -105,4 +105,54 @@ body{
     color:rgb(23, 23, 23);
     font-size:large;
     font-weight:bold;
+}
+
+.user-balance{
+    border:none;
+    width:50%;
+    background-color: rgba(230, 230, 230, 0.822);
+    margin:1rem auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    align-items:center;
+    border-radius:1rem;
+    box-shadow: 0 0 2px 1px rgb(104, 104, 104);
+}
+
+.wellcome-message{
+    font-size:3rem;
+    color:rgb(200, 140, 0);
+}
+
+.show-balance{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border:1.6rem solid;
+    width:15rem;
+    height:15rem;
+    border-image:linear-gradient(rgb(200, 140, 0), rgba(255, 249, 249, 0.659));
+    border-image-slice:2;
+}
+
+.balance-capt{
+    font-size:1.2rem;
+    color:rgb(141, 80, 0);
+    font-weight:bold;
+}
+
+.balance-currency{
+    font-size:2.4rem;
+    color:rgb(152, 83, 0);
+}
+
+.balance-currency .amount{
+    font-weight:bold;
+}
+
+.actually-here{
+    background-color: rgb(255, 204, 143);
+    color:rgb(163, 122, 122);
 }

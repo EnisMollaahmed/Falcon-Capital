@@ -1,8 +1,11 @@
-let currData;
-let cValues;
+// let currData;
+// let cValues;
 const cContainer = document.querySelector(".currency-container");
 const balance = document.querySelector(".balance");
 const user = JSON.parse(sessionStorage.getItem("actual-user"));
+const welcomeMessage=document.querySelector(".username");
+const visibleBalance=document.querySelector(".balance-currency .amount");
+const visibleCurrency=document.querySelector(".balance-currency .currency");
 
 //PROBLEMATIC CODE!!!!!!!
 // const loadInformation = async () => {
@@ -22,9 +25,20 @@ const user = JSON.parse(sessionStorage.getItem("actual-user"));
 // currencyValues();
 //!!!!!!!!!!!!!!
 
-const balanceInfo = document.createElement("p");
-balanceInfo.textContent=user.balance;
-balanceInfo.classList.add("balance-num");
-balance.appendChild(balanceInfo);
+const greetUser = ()=>{
+    welcomeMessage.textContent=user.username;
+}
 
-console.log(currData);
+const showBalance = ()=>{
+    visibleBalance.textContent=user.balance;
+    if(user.currency !== "X"){
+        visibleBalance.textContent=user.currency;
+    }
+}
+
+const showInfo= ()=>{
+    greetUser();
+    showBalance();
+}
+
+window.addEventListener("load",showInfo);

@@ -144,3 +144,8 @@ body{
 .your-balance{
     color:rgb(64, 64, 64);
 }
+
+.actually-here{
+    background-color: rgb(255, 204, 143);
+    color:rgb(163, 122, 122);
+}

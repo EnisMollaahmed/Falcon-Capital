@@ -87,3 +87,8 @@ body{
     border-radius:0.5rem;
     border:none;
 }
+
+.actually-here{
+    background-color: rgb(255, 204, 143);
+    color:rgb(163, 122, 122);
+}

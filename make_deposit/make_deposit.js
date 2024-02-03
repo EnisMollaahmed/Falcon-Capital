@@ -10,12 +10,20 @@ const showInfo = () => {
     showBalanceCurrency.textContent=actUser.currency;
 };
 
+const selectCurr = () =>{
+    if(actUser.currency === "X" && actUser.balance === 0){
+        actUser.currency = depositCurrency.options[depositCurrency.selectedIndex].value;
+    }
+};
+
 const addToBalance = (event)=>{
     if(depositInput.value !== "" && !isNaN(depositInput.value)){
+        selectCurr();
         actUser.balance=actUser.balance + depositInput.value;
         sessionStorage.setItem("actual-user", JSON.stringify(actUser));
         localStorage.setItem(actUser.email, JSON.stringify(actUser));
         showBalanceAmount.textContent=actUser.balance;
+        showBalanceCurrency.textContent=actUser.currency;
     }
     event.preventDefault();
 }
