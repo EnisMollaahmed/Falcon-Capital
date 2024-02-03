@@ -1,0 +1,44 @@
+<!DOCTYPE html> <!--TODO Consider to remove currency select-->
+<html>
+    <head>
+        <meta charser="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Make Deposit</title>
+        <link rel="stylesheet" href="make_deposit.css">
+        <script type="text/javascript" src="make_deposit.js" defer></script>
+    </head>
+    <body>
+        <header class="h_and_nav">
+            <h1 class="falcon_capital">Falcon Capital</h1>
+            <nav class="nav_container">
+                <a href="#" class="direct">Dashboard</a>
+                <a href="#" class="direct actually-here">Deposit</a>
+                <a href="#" class="direct">View Transactions</a>
+                <a href="#" class="direct">Money Transfer</a>
+                <a href="#" class="direct">Taking a Loan</a>
+                <a href="#" class="direct">Balance and Statistics</a>
+            </nav>
+        </header>
+        <main class="new-acc">
+        <section class="acc-container">
+            <section class="balance-container">
+                <p class="balnce-currency"><span class="balance">0000</span> <span class="currency">EUR</span></p>
+                <p class="balance-capt">BALANCE</p>
+            </section>
+            <form class="new-acc-form">
+                <section class="deposit-container">
+                    <input type="number" min="100" id="money" class="money-inp" placeholder="Deposit Amount">
+                    <select name="currencies" id="curr" class="select-curr">
+                        <option value="EUR">EUR</option>
+                        <option value="USD">USD</option>
+                        <option value="BGN">BGN</option>
+                        <option value="RUB">RUB</option>
+                        <option value="TRY">TRY</option>
+                    </select>
+                </section>
+                <button class="create-account-button">Deposit</button>
+            </form>
+        </section>
+        </main>
+    </body>
+</html>
