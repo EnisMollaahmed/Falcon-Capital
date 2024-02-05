@@ -6,6 +6,7 @@ const user = JSON.parse(sessionStorage.getItem("actual-user"));
 const welcomeMessage=document.querySelector(".username");
 const visibleBalance=document.querySelector(".balance-currency .amount");
 const visibleCurrency=document.querySelector(".balance-currency .currency");
+const exitButton = document.querySelector(".exit-button");
 
 //PROBLEMATIC CODE!!!!!!!
 // const loadInformation = async () => {
@@ -41,4 +42,12 @@ const showInfo= ()=>{
     showBalance();
 }
 
+const handleExit=(event)=>{
+    localStorage.setItem(user.email, JSON.stringify());
+    sessionStorage.clear();
+    window.location.replace("http://127.0.0.1:5500/sign_in_page/sign_in.html");
+    event.preventDefault();
+}
+
 window.addEventListener("load",showInfo);
+exitButton.addEventListener("click", handleExit);

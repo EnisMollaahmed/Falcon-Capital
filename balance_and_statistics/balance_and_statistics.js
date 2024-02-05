@@ -11,6 +11,7 @@ const incToDateAmount = document.querySelector(".inc .money");
 const incToDateCurr = document.querySelector(".inc .curr");
 const expToDateAmount = document.querySelector(".spend .money");
 const expToDateCurr = document.querySelector(".spend .curr");
+const exitButton = document.querySelector(".exit-button");
 
 function sumIncome(){
     let sum = 0;
@@ -91,4 +92,12 @@ const showInfo = ()=>{
     expToDateCurr.textContent=actualUser.currency;
 };
 
+const handleExit=(event)=>{
+    localStorage.setItem(user.email, JSON.stringify());
+    sessionStorage.clear();
+    window.location.replace("http://127.0.0.1:5500/sign_in_page/sign_in.html");
+    event.preventDefault();
+}
+
 window.addEventListener("load", showInfo);
+exitButton.addEventListener("click", handleExit);

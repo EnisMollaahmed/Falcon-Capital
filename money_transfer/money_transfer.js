@@ -5,6 +5,7 @@ const usernameField = document.querySelector(".send-to");
 const amountField = document.querySelector(".send-amount");
 const transferButton = document.querySelector(".transfer-button");
 const circle = document.querySelector(".balnce-curr");
+const exitButton = document.querySelector(".exit-button");
 let receieverUser;
 let recUserEmail;
 
@@ -58,5 +59,13 @@ const handleClick = (event)=>{
     event.preventDefault();
 };
 
+const handleExit=(event)=>{
+    localStorage.setItem(user.email, JSON.stringify());
+    sessionStorage.clear();
+    window.location.replace("http://127.0.0.1:5500/sign_in_page/sign_in.html");
+    event.preventDefault();
+};
+
 window.addEventListener("load", showBalanceData);
 transferButton.addEventListener("click", handleClick);
+exitButton.addEventListener("click", handleExit);

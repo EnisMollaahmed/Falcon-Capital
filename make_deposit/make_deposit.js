@@ -4,6 +4,7 @@ const actUser= JSON.parse(sessionStorage.getItem("actual-user"));
 const depositInput = document.querySelector(".money-inp");
 const depositCurrency= document.querySelector(".select-curr");
 const createAccButton = document.querySelector(".create-account-button");
+const exitButton = document.querySelector(".exit-button");
 
 const showInfo = () => {
     showBalanceAmount.textContent=actUser.balance;
@@ -28,5 +29,13 @@ const addToBalance = (event)=>{
     event.preventDefault();
 }
 
+const handleExit=(event)=>{
+    localStorage.setItem(user.email, JSON.stringify());
+    sessionStorage.clear();
+    window.location.replace("http://127.0.0.1:5500/sign_in_page/sign_in.html");
+    event.preventDefault();
+}
+
 window.addEventListener("load", showInfo);
 createAccButton.addEventListener("click", addToBalance);
+exitButton.addEventListener("click", handleExit);

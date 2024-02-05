@@ -5,6 +5,7 @@ const loanButton = document.querySelector(".loan-button");
 const showAmount = document.querySelector(".amount");
 const showCurr = document.querySelector(".currency");
 const countOfLoands = document.querySelector(".count");
+const exitButton = document.querySelector(".exit-button");
 
 
 const showDebt = () =>{
@@ -25,5 +26,13 @@ const handleClick = (event) =>{
     event.preventDefault();
 };
 
+const handleExit=(event)=>{
+    localStorage.setItem(user.email, JSON.stringify());
+    sessionStorage.clear();
+    window.location.replace("http://127.0.0.1:5500/sign_in_page/sign_in.html");
+    event.preventDefault();
+};
+
 window.addEventListener("load", showDebt);
 loanButton.addEventListener("click", handleClick);
+exitButton.addEventListener("click", handleExit);

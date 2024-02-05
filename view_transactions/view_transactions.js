@@ -3,6 +3,7 @@ const incomeSect = document.querySelector(".income .scrollable");
 const actualUser= JSON.parse(sessionStorage.getItem("actual-user"));
 const outcomeArr=actualUser["outcome-transactions"];
 const incomeArr=actualUser["income-transactions"];
+const exitButton = document.querySelector(".exit-button");
 
 const addInfoToOutcome = () => {
     outcomeArr.forEach(element => {
@@ -49,4 +50,12 @@ const loadTransferInfo = () => {
     addInfoToIncome();
 };
 
+const handleExit=(event)=>{
+    localStorage.setItem(user.email, JSON.stringify());
+    sessionStorage.clear();
+    window.location.replace("http://127.0.0.1:5500/sign_in_page/sign_in.html");
+    event.preventDefault();
+};
+
 window.addEventListener("load",loadTransferInfo);
+exitButton.addEventListener("click", handleExit);
