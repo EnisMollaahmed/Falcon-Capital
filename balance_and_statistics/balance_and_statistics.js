@@ -1,6 +1,6 @@
 const actualUser=JSON.parse(sessionStorage.getItem("actual-user"));
 const visibleBalance = document.querySelector(".balance-currency .balance");
-const visibleCurrency = document.querySelector(".balance-curency .currency");
+const visibleCurrency = document.querySelector(".balance-currency .currency");
 const totalSpendingVisisble=document.querySelector(".spending .amount");
 const totalSpendingCurrency = document.querySelector(".spending .curr");
 const totalIncomeVisible=document.querySelector(".income .amount");
@@ -22,7 +22,7 @@ function sumIncome(){
 
 function sumExpenses(){
     let sum = 0;
-    actualUser["outcome-transaction"].forEach(element => {
+    actualUser["outcome-transactions"].forEach(element => {
         sum+=element.amount;
     });
     return sum;

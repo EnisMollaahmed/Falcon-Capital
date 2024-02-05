@@ -37,23 +37,24 @@ const doesReceiverExist = ()=>{
 }
 
 const handleClick = (event)=>{
-    if(usernameField.value !== "" && amountField.value !== "" && !isNaN(amountField.value) && amountField.value <= actualUser.balance && doesReceiverExist()){
-        actualUser.balance = actualUser.balance - amountField.value;
+    if(usernameField.value !== "" && amountField.value !== "" && !isNaN(amountField.value) && Number(amountField.value) <= actualUser.balance && doesReceiverExist()){
+        actualUser.balance = actualUser.balance - Number(amountField.value);
         const transaction = {
             senderUsername:actualUser.username,
             recieverUsername:usernameField.value,
-            amount: amountField.value,
-            currency: visibleCurrency.innerHTML
+            amount: Number(amountField.value),
+            currency: visibleCurrency.textContent
         };
         findReceiver();
-        receieverUser["outcome-transactions"].push("transaction");
+        receieverUser["income-transactions"].push(transaction);
         actualUser["outcome-transactions"].push(transaction);
-        localStorage(actualUser.email, JSON.stringify(actualUser));
-        sessionStorage("actual-user", JSON.stringify(actualUser));
+        debugger
+        localStorage.setItem(actualUser.email, JSON.stringify(actualUser));
+        sessionStorage.setItem("actual-user", JSON.stringify(actualUser));
         localStorage.getItem(recUserEmail, receieverUser);
         visibleBalance.textContent = actualUser.balance;
-        
-    }//TODO add error message
+        event.preventDefault();
+    }
     event.preventDefault();
 };
 

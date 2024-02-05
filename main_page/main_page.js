@@ -32,7 +32,7 @@ const greetUser = ()=>{
 const showBalance = ()=>{
     visibleBalance.textContent=user.balance;
     if(user.currency !== "X"){
-        visibleBalance.textContent=user.currency;
+        visibleCurrency.textContent=user.currency;
     }
 }
 

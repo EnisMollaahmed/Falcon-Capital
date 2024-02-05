@@ -19,7 +19,7 @@ const selectCurr = () =>{
 const addToBalance = (event)=>{
     if(depositInput.value !== "" && !isNaN(depositInput.value)){
         selectCurr();
-        actUser.balance=actUser.balance + depositInput.value;
+        actUser.balance=actUser.balance + Number(depositInput.value);
         sessionStorage.setItem("actual-user", JSON.stringify(actUser));
         localStorage.setItem(actUser.email, JSON.stringify(actUser));
         showBalanceAmount.textContent=actUser.balance;
