@@ -27,7 +27,7 @@ const handleClick = (event) =>{
 };
 
 const handleExit=(event)=>{
-    localStorage.setItem(user.email, JSON.stringify());
+    localStorage.setItem(actUser.email, JSON.stringify(actUser));
     sessionStorage.clear();
     window.location.replace("http://127.0.0.1:5500/sign_in_page/sign_in.html");
     event.preventDefault();

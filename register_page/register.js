@@ -135,7 +135,8 @@ const validateRepPassword = () => {
 function userExists(userObj){
     const strUser = JSON.stringify(userObj);
     let keys = Object.keys(localStorage);
-    for(let key in keys) {
+    for(let i = 0; i < keys.length; i++){
+        let key = keys.at(i);
         if(localStorage.getItem(key) === strUser){
             return true;
         }
@@ -145,9 +146,10 @@ function userExists(userObj){
 
 const registerUser = (event) => {
     if(mailField.classList.contains("is-correct") && usernameField.classList.contains("is-correct") && passwField.classList.contains("is-correct") && repPasswField.classList.contains("is-correct")){
-        let userObj = {
+        debugger
+        const userObj = {
             email: mailField.value,
-            usname: usernameField.value,
+            username: usernameField.value,
             password: passwField.value,
             balance:0,
             currency:"X",
@@ -158,9 +160,11 @@ const registerUser = (event) => {
         };
         if(!userExists(userObj)){
             userObj.balance = 0;
-            localStorage(mailField.value, JSON.stringify(userObj));
-            sessionStorage("actual-user", JSON.stringify(userObj));
+            localStorage.setItem(mailField.value, JSON.stringify(userObj));
+            sessionStorage.setItem("actual-user", JSON.stringify(userObj));
             window.location="http://127.0.0.1:5500/main_page/main_page.html";
+            event.preventDefault();
+
         }
     }
     event.preventDefault();

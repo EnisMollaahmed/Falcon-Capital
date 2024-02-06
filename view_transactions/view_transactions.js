@@ -6,43 +6,47 @@ const incomeArr=actualUser["income-transactions"];
 const exitButton = document.querySelector(".exit-button");
 
 const addInfoToOutcome = () => {
-    outcomeArr.forEach(element => {
-        const senderParagraph = document.createElement("p");
-        const recieverParagraph = document.createElement("p");
-        const amountParagraph = document.createElement("p");
-        senderParagraph.classList.add("out-sender-p");
-        recieverParagraph.classList.add("out-reciever-p");
-        amountParagraph.classList.add("out-amount-p");
-        senderParagraph.textContent=element["senderUsername"];
-        recieverParagraph.textContent=element["recieverUsername"];
-        amountParagraph.textContent=element["amount"];
-        const outContainer = document.createElement("section");
-        outContainer.appendChild(senderParagraph);
-        outContainer.appendChild(recieverParagraph);
-        outContainer.appendChild(amountParagraph);
-        outContainer.classList.add("out-tr");
-        outcomeSect.appendChild(outContainer);
-    });
+    if(outcomeArr.length > 0){
+        outcomeArr.forEach(element => {
+            const senderParagraph = document.createElement("p");
+            const recieverParagraph = document.createElement("p");
+            const amountParagraph = document.createElement("p");
+            senderParagraph.classList.add("out-sender-p");
+            recieverParagraph.classList.add("out-reciever-p");
+            amountParagraph.classList.add("out-amount-p");
+            senderParagraph.textContent=element["senderUsername"];
+            recieverParagraph.textContent=element["recieverUsername"];
+            amountParagraph.textContent=element["amount"];
+            const outContainer = document.createElement("section");
+            outContainer.appendChild(senderParagraph);
+            outContainer.appendChild(recieverParagraph);
+            outContainer.appendChild(amountParagraph);
+            outContainer.classList.add("out-tr");
+            outcomeSect.appendChild(outContainer);
+        });
+    }
 };
 
 const addInfoToIncome=()=>{
-    incomeArr.forEach(element=>{
-        const senderParagraph = document.createElement("p");
-        const recieverParagraph = document.createElement("p");
-        const amountParagraph = document.createElement("p");
-        senderParagraph.classList.add("inc-sender-p");
-        recieverParagraph.classList.add("inc-reciever-p");
-        amountParagraph.classList.add("inc-amount-p");
-        senderParagraph.textContent=element["senderUsername"];
-        recieverParagraph.textContent=element["recieverUsername"];
-        amountParagraph.textContent=element["amount"];
-        const incomeContainer = document.createElement("section");
-        incomeContainer.appendChild(senderParagraph);
-        incomeContainer.appendChild(recieverParagraph);
-        incomeContainer.appendChild(amountParagraph);
-        incomeContainer.classList.add("inc-tr");
-        incomeSect.appendChild(incomeContainer);
-    })
+    if(incomeArr.length > 0){
+        incomeArr.forEach(element=>{
+            const senderParagraph = document.createElement("p");
+            const recieverParagraph = document.createElement("p");
+            const amountParagraph = document.createElement("p");
+            senderParagraph.classList.add("inc-sender-p");
+            recieverParagraph.classList.add("inc-reciever-p");
+            amountParagraph.classList.add("inc-amount-p");
+            senderParagraph.textContent=element["senderUsername"];
+            recieverParagraph.textContent=element["recieverUsername"];
+            amountParagraph.textContent=element["amount"];
+            const incomeContainer = document.createElement("section");
+            incomeContainer.appendChild(senderParagraph);
+            incomeContainer.appendChild(recieverParagraph);
+            incomeContainer.appendChild(amountParagraph);
+            incomeContainer.classList.add("inc-tr");
+            incomeSect.appendChild(incomeContainer);
+        });
+    }
 };
 
 const loadTransferInfo = () => {
@@ -51,7 +55,7 @@ const loadTransferInfo = () => {
 };
 
 const handleExit=(event)=>{
-    localStorage.setItem(user.email, JSON.stringify());
+    localStorage.setItem(actualUser.email, JSON.stringify(actualUser));
     sessionStorage.clear();
     window.location.replace("http://127.0.0.1:5500/sign_in_page/sign_in.html");
     event.preventDefault();

@@ -59,8 +59,10 @@ const accessToApp = (event)=>{
 };
 
 const prepareInfo = async()=>{
-    await loadAllUsers();
-    writeToStorage();
+    if(localStorage.length === 0){
+        await loadAllUsers();
+        writeToStorage();
+    }
 };
 
 window.addEventListener("load", prepareInfo);

@@ -19,8 +19,9 @@ const showBalanceData = ()=>{
 const findReceiver = () =>{
     const keys = Object.keys(localStorage);
     for(let key of keys){
-        if(JSON.parse(localStorage.getItem(key)).username === usernameField.value){
-            receieverUser = JSON.parse(localStorage.getItem(key));
+        const target = JSON.parse(localStorage.getItem(key));
+        if(target.username === usernameField.value){
+            receieverUser = target;
             recUserEmail = key;
             break;
         }
@@ -30,7 +31,8 @@ const findReceiver = () =>{
 const doesReceiverExist = ()=>{
     const keys = Object.keys(localStorage);
     for(let key of keys){
-        if(JSON.parse(localStorage.getItem(key)).username ===usernameField.value){
+        const target = JSON.parse(localStorage.getItem(key));
+        if(target.username ===usernameField.value){
             return true;
         }
     }
@@ -40,6 +42,7 @@ const doesReceiverExist = ()=>{
 const handleClick = (event)=>{
     if(usernameField.value !== "" && amountField.value !== "" && !isNaN(amountField.value) && Number(amountField.value) <= actualUser.balance && doesReceiverExist()){
         actualUser.balance = actualUser.balance - Number(amountField.value);
+        debugger
         const transaction = {
             senderUsername:actualUser.username,
             recieverUsername:usernameField.value,
@@ -47,12 +50,12 @@ const handleClick = (event)=>{
             currency: visibleCurrency.textContent
         };
         findReceiver();
+        receieverUser.balance += Number(amountField.value);
         receieverUser["income-transactions"].push(transaction);
         actualUser["outcome-transactions"].push(transaction);
-        debugger
         localStorage.setItem(actualUser.email, JSON.stringify(actualUser));
         sessionStorage.setItem("actual-user", JSON.stringify(actualUser));
-        localStorage.getItem(recUserEmail, receieverUser);
+        localStorage.setItem(recUserEmail, JSON.stringify(receieverUser));
         visibleBalance.textContent = actualUser.balance;
         event.preventDefault();
     }
@@ -60,7 +63,7 @@ const handleClick = (event)=>{
 };
 
 const handleExit=(event)=>{
-    localStorage.setItem(user.email, JSON.stringify());
+    localStorage.setItem(actualUser.email, JSON.stringify(actualUser));
     sessionStorage.clear();
     window.location.replace("http://127.0.0.1:5500/sign_in_page/sign_in.html");
     event.preventDefault();
