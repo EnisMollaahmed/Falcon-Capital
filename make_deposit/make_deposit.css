@@ -175,3 +175,98 @@ body{
     letter-spacing: 0.2rem;
     font-weight:bold;
 }
+
+@media screen and (max-width: 767px){
+    .nav_container{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        background: rgb(176, 132, 0);
+    }
+
+    .direct{
+        color:white;
+        text-decoration:none;
+        margin: 0;
+        font-size:1.2rem;
+        border:none;
+        padding:0.8rem;
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: center;
+        height:3rem;
+    }
+    
+    .direct:hover{
+        background-color: rgb(227, 196, 59);
+        color:rgb(73, 73, 73);
+        height: 3rem;
+    }
+
+    .exit-button{
+        width:100%;
+        height: 3rem;
+        letter-spacing: 0.1rem;
+        background-color: rgb(181, 127, 0);
+        border:none;
+        color:white;
+        font-size:1.1rem;
+    }
+    
+    .exit-button:hover{
+        background-color: rgb(226, 0, 0);
+        letter-spacing: 0.2rem;
+        font-weight:bold;
+        height: 3rem;
+    }
+
+    .acc-container{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items:center;
+        width:90%;
+        height: 90%;
+        background-color: rgba(255, 228, 196, 0.764);
+        border:none;
+        border-radius:1.5rem;
+    }
+
+    .balance-container{
+        border:1rem solid;
+        width: 55vw; /*perfect width and height for devices in devices toobar in the inspection*/
+        height: 100vw;
+        border-radius:50%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        margin-top:1rem;
+        border-color:rgb(255, 170, 0);
+        color:rgb(72, 72, 72);
+        background-color:rgb(255, 240, 220);
+    }
+
+    .deposit-container{
+        display:flex;
+        border:none;
+        width:96%;
+        height: 3.5rem;
+    }
+
+    .create-account-button{
+        width:90%;
+        height: 3.5rem;
+        border:none;
+        background-color: rgb(231, 182, 60);
+        border-radius:0.5rem;
+        color:rgb(85, 85, 85);
+        font-size:1.4rem
+    }
+    
+    .create-account-button:hover{
+        background-color: rgb(255, 166, 0);
+        color:white;
+    }
+}
