@@ -154,6 +154,7 @@ body{
 .actually-here{
     background-color: rgb(255, 204, 143);
     color:rgb(163, 122, 122);
+
 }
 
 .exit-button{
@@ -169,4 +170,148 @@ body{
     background-color: rgb(226, 0, 0);
     letter-spacing: 0.2rem;
     font-weight:bold;
+}
+
+@media screen and (max-width: 767px){
+    .nav_container{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        background: rgb(176, 132, 0);
+    }
+
+    .direct{
+        color:white;
+        text-decoration:none;
+        margin: 0;
+        font-size:1.2rem;
+        border:none;
+        padding:0.8rem;
+        width:94%;
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+    }
+    
+    .direct:hover{
+        background-color: rgb(227, 196, 59);
+        color:rgb(73, 73, 73);
+        height: 3rem;
+        width:auto
+    }
+    
+    .exit-button{
+        letter-spacing: 0.1rem;
+        background-color: rgb(181, 127, 0);
+        border:none;
+        color:white;
+        font-size:1.1rem;
+        width:100%;
+        height:3rem;
+    }
+    
+    .exit-button:hover{
+        background-color: rgb(226, 0, 0);
+        letter-spacing: 0.2rem;
+        font-weight:bold;
+    }
+
+    .actually-here{
+        background-color: rgb(255, 204, 143);
+        color:rgb(163, 122, 122);
+        width:auto;
+    }
+
+    .loan{
+        display:flex;
+        flex-direction:column-reverse;
+        flex-wrap:nowrap;
+        align-items:center;
+        justify-content: space-between;
+        height: 120vh;
+        background: url("https://th.bing.com/th/id/OIG3.mIAgo3jPwV_6Bl25EdKs?w=1024&h=1024&rs=1&pid=ImgDetMain");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .request-loan-container{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items:center;
+        width:90%;
+        height: 80vh;
+        background-color: blanchedalmond;
+        border:none;
+        border-radius: 2rem;
+        box-shadow:0 0 0.3rem 0.1rem rgba(255, 179, 56, 0.678);
+    }
+
+    .total-debt-container{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        width:90%;
+        height:60vh;
+        justify-content:space-around;
+        background-color: rgba(255, 234, 209, 0.89);
+        border-radius:2rem;
+        border:none;
+        box-shadow: 0 0 0.3rem 0.1rem rgba(255, 179, 56, 0.742);
+        margin: 1rem;
+    }
+    .take-loan{
+        font-size:2.2rem;
+        margin-top:0;
+        letter-spacing: 0.2rem;
+        color:rgb(173, 110, 0);
+        font-weight: bolder;
+    }
+    .circle{
+        width:16rem;
+        height: 40rem;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border:1.5rem solid;
+        border-radius:50%;
+        border-color:rgb(243, 166, 52);
+    }
+
+    .req-item{
+        display: flex;
+        flex-direction:column;
+        width:100%;
+        height:3rem;
+        border:none;
+        border-radius:1.2rem;
+        font-size:1rem;
+    }
+    .loan-button{
+        width:100%;
+        height: 3rem;
+        border:none;
+        background-color: rgb(255, 198, 123);
+        border-radius:1rem;
+        font-size: 1.3rem;
+        color:rgb(255, 251, 244);
+        letter-spacing: 0.2rem;
+        font-weight: bold;
+        position:relative;
+    }
+    
+    .loan-button:hover{
+        background-color: rgb(255, 202, 43);
+        color:rgb(75, 75, 75);
+        font-weight: normal;
+        top: -5px;
+        left: -5px;
+        transition: .2s ease-in;
+        z-index:1;
+        box-shadow: 10px 10px 0px rgba(189, 142, 1, 0.729);
+        letter-spacing: .5rem;
+    }
 }
