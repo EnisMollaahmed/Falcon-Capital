@@ -9,6 +9,9 @@ const exitButton = document.querySelector(".exit-button");
 const showInfo = () => {
     showBalanceAmount.textContent=actUser.balance;
     showBalanceCurrency.textContent=actUser.currency;
+    if(actUser.currency !== "X"){
+        depositCurrency.value = actUser.currency;
+    }
 };
 
 const selectCurr = () =>{
