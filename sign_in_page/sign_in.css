@@ -159,3 +159,18 @@ body{
         margin-top:0;
     }
 }
+
+@media screen and (min-width: 767px) and (max-width: 1023px){/*tablet resolution*/
+    .falcon{
+        font-size:2.8rem;
+    }
+
+    .central-sign-in{
+        width:70%;
+        height:70%;
+    }
+
+    .form-container{
+        width:100%;
+    }
+}
