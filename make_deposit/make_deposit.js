@@ -15,7 +15,7 @@ const showInfo = () => {
 };
 
 const selectCurr = () =>{
-    if(actUser.currency === "X" && actUser.balance === 0){
+    if(actUser.currency === "X"){
         actUser.currency = depositCurrency.options[depositCurrency.selectedIndex].value;
     }
 };
