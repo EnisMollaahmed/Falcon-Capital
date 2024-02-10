@@ -35,7 +35,7 @@ const addToBalance = (event)=>{
 const handleExit=(event)=>{
     localStorage.setItem(actUser.email, JSON.stringify(actUser));
     sessionStorage.clear();
-    window.location.replace("http://127.0.0.1:5500/sign_in_page/index.html");
+    window.location.replace("https://enismollaahmed.github.io/Falcon-Capital/sign_in_page/index.html");
     event.preventDefault();
 }
 

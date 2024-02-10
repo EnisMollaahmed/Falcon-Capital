@@ -7,7 +7,7 @@ const repPasswField = document.querySelector('[name="rep-password"]');
 const regButton = document.querySelector("#regButton");
 
 function redirTo(event){
-    window.location = "http://127.0.0.1:5500/sign_in_page/index.html";
+    window.location = "https://enismollaahmed.github.io/Falcon-Capital/sign_in_page/index.html";
     event.preventDefault();
 }
 
@@ -162,7 +162,7 @@ const registerUser = (event) => {
             userObj.balance = 0;
             localStorage.setItem(mailField.value, JSON.stringify(userObj));
             sessionStorage.setItem("actual-user", JSON.stringify(userObj));
-            window.location="http://127.0.0.1:5500/main_page/index.html";
+            window.location="https://enismollaahmed.github.io/Falcon-Capital/main_page/index.html";
             event.preventDefault();
 
         }

@@ -45,7 +45,7 @@ const accessToApp = (event)=>{
         //TODO: send user to app
         const targetUser = localStorage.getItem(mailField.value);
         sessionStorage.setItem("actual-user", targetUser);
-        window.location="http://127.0.0.1:5500/main_page/index.html";
+        window.location="https://enismollaahmed.github.io/Falcon-Capital/main_page/index.html";
     }
     else{//TODO: output error message
         const errMessage = document.createElement("p");
