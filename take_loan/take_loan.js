@@ -19,6 +19,7 @@ const handleClick = (event) =>{
     if (amountField.value !== "" && !isNaN(amountField.value) && period.value !== "" && !isNaN(period.value)) {
         actUser.debt += Number(amountField.value);
         actUser.debtCount += 1;
+        actUser.balance += Number(amountField.value);
         localStorage.setItem(actUser.email, JSON.stringify(actUser));
         sessionStorage.setItem("actual-user", JSON.stringify(actUser));
         showDebt();

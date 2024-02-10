@@ -95,7 +95,7 @@ const showInfo = ()=>{
 const handleExit=(event)=>{
     localStorage.setItem(actualUser.email, JSON.stringify(actualUser));
     sessionStorage.clear();
-    window.location.replace("http://127.0.0.1:5500/sign_in_page/index.html");
+    window.location.replace("https://enismollaahmed.github.io/Falcon-Capital/sign_in_page/index.html");
     event.preventDefault();
 }
 
