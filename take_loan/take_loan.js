@@ -16,7 +16,7 @@ const showDebt = () =>{
 
 const handleClick = (event) =>{
     debugger
-    if (amountField.value !== "" && !isNaN(amountField.value) && period.value !== "" && !isNaN(period.value)) {
+    if (amountField.value !== "" && !isNaN(amountField.value) && period.value !== "" && !isNaN(period.value) && actUser.currency !== 'X') {
         actUser.debt += Number(amountField.value);
         actUser.debtCount += 1;
         actUser.balance += Number(amountField.value);
