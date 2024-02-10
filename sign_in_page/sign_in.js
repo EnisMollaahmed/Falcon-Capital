@@ -18,7 +18,7 @@ const writeToStorage = ()=>{
 }
 
 const redirectToReg = (event) => {
-    window.location = "http://127.0.0.1:5500/register_page/index.html";
+    window.location = "https://enismollaahmed.github.io/Falcon-Capital/register_page/index.html";
     event.preventDefault();
 };
 
