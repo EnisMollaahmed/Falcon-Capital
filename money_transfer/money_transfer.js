@@ -36,7 +36,7 @@ const doesReceiverExist = ()=>{
     const keys = Object.keys(localStorage);
     for(let key of keys){
         const target = JSON.parse(localStorage.getItem(key));
-        if(target.username ===usernameField.value){
+        if(target.username ===usernameField.value && target.currency !== "X"){
             return true;
         }
     }
@@ -76,10 +76,6 @@ const handleClick = (event)=>{
         };
         findReceiver();
         const transactionCoef= findTransactCoef();
-        if(receieverUser.currency === "X"){
-            receieverUser.currency = visibleCurrency.textContent;
-            receieverUser.balance = 1;
-        }
         receieverUser.balance += transactionCoef * Number(amountField.value);
         receieverUser["income-transactions"].push(transaction);
         actualUser["outcome-transactions"].push(transaction);
