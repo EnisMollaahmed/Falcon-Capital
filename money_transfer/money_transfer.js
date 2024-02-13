@@ -78,6 +78,7 @@ const handleClick = (event)=>{
         const transactionCoef= findTransactCoef();
         if(receieverUser.currency === "X"){
             receieverUser.currency = visibleCurrency.textContent;
+            receieverUser.balance = 1;
         }
         receieverUser.balance += transactionCoef * Number(amountField.value);
         receieverUser["income-transactions"].push(transaction);
