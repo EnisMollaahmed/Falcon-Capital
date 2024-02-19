@@ -5,6 +5,10 @@ const depositInput = document.querySelector(".money-inp");
 const depositCurrency= document.querySelector(".select-curr");
 const createAccButton = document.querySelector(".create-account-button");
 const exitButton = document.querySelector(".exit-button");
+const bgnTo = {USD: .55, EUR: .51, TRY: 16.87, BGN: 1};
+const tryTo = {USD: .033, EUR: .030, TRY: 1, BGN: .059};
+const usdTo = {USD: 1, EUR: 0.93, TRY: 30.60, BGN: 1.81};
+const eurTo = {USD: 1.08, EUR: 1, TRY: 32.97, BGN: 1.95};
 
 const showInfo = () => {
     showBalanceAmount.textContent=actUser.balance;
@@ -20,10 +24,27 @@ const selectCurr = () =>{
     }
 };
 
+const findCurrVector = ()=>{
+    if(actUser.currency === "BGN"){
+        return bgnTo;
+    }
+    else if(actUser.currency === "EUR"){
+        return eurTo;
+    }
+    else if(actUser.currency === "USD"){
+        return usdTo;
+    }
+    else if(actUser.currency === "TRY"){
+        return tryTo;
+    }
+}
+
 const addToBalance = (event)=>{
     if(depositInput.value !== "" && !isNaN(depositInput.value)){
         selectCurr();
-        actUser.balance=actUser.balance + Number(depositInput.value);
+        currVector = findCurrVector();
+        depCurr = currVector[depositCurrency.options[depositCurrency.selectedIndex].value];
+        actUser.balance=actUser.balance + depCurr * Number(depositInput.value);
         sessionStorage.setItem("actual-user", JSON.stringify(actUser));
         localStorage.setItem(actUser.email, JSON.stringify(actUser));
         showBalanceAmount.textContent=actUser.balance;
